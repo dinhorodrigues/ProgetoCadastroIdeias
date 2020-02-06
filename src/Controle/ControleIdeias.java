@@ -25,12 +25,14 @@ public class ControleIdeias {
         conex.conectar();
         
         try {
-            PreparedStatement pst = conex.con.prepareStatement("insert into tab_ideias (dataCad,descricao,situacao,viabilidade,chavealtera)values(?,?,?,?,?)");
+            PreparedStatement pst = conex.con.prepareStatement("insert into tab_ideias (dataCad,descricao,situacao,viabilidade,chavealtera,nome_pessoa,dataidentifica)values(?,?,?,?,?,?,?)");
             pst.setString(1, mod.getDataCad());
             pst.setString(2, mod.getDescricao());
             pst.setString(3, mod.getSituacao());
             pst.setInt(4,mod.getViabilidade());
             pst.setBoolean(5, mod.isChaveAtera());
+            pst.setString(6, mod.getNome());
+            pst.setString(7, mod.getDataIdentifica());
             pst.execute();
             JOptionPane.showMessageDialog(null, "ideia cadastrada com sucesso!");
         } catch (SQLException ex) {

@@ -301,6 +301,7 @@ public class formInicial extends javax.swing.JFrame {
        flag=1;
         jTextFieldDescricao.setEnabled(true);
         jTextFieldNome.setText("");
+       
         jTextFieldDescricao.setText("");
         jComboBoxSituacao.setEnabled(true);
         jComboBoxSituacao.setSelectedIndex(-1);
@@ -309,6 +310,7 @@ public class formInicial extends javax.swing.JFrame {
         jButtonSalvar.setEnabled(true);
         jButtonCancelar.setEnabled(true);
         jFormattedTextFildData.setText(this.data); 
+        jButtonPessoa.setEnabled(true);
         
        
         
@@ -385,10 +387,10 @@ public class formInicial extends javax.swing.JFrame {
           
         mod.setDescricao(jTextFieldDescricao.getText());
         mod.setViabilidade((jComboBoxViabilidade.getSelectedIndex()+1));
-       
         mod.setDataCad(jFormattedTextFildData.getText());
-        mod.setChaveAtera(false);
-        controle.salvar(mod);
+        mod.setSituacao(String.valueOf(jComboBoxSituacao.getSelectedItem()));
+        mod.setNome(jTextFieldNome.getText());
+       controle.salvar(mod);
         
         
        jTextFieldCod.setText("");
@@ -448,6 +450,7 @@ public class formInicial extends javax.swing.JFrame {
        preenceherTabela("select * from tab_ideias order by viabilidade desc");
         jButtonPessoa.setEnabled(false);
         atualizaDados();
+       
         
     }//GEN-LAST:event_jButtonSalvarActionPerformed
     
@@ -489,7 +492,7 @@ public class formInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_TabelaIdeiasKeyPressed
 
     private void TabelaIdeiasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaIdeiasMouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_TabelaIdeiasMouseEntered
 
     private void TabelaIdeiasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaIdeiasKeyReleased
