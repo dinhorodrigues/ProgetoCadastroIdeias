@@ -167,10 +167,16 @@ public class formInicial extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TabelaIdeiasMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TabelaIdeiasMouseEntered(evt);
+            }
         });
         TabelaIdeias.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TabelaIdeiasKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TabelaIdeiasKeyReleased(evt);
             }
         });
         jScrollPane1.setViewportView(TabelaIdeias);
@@ -205,7 +211,7 @@ public class formInicial extends javax.swing.JFrame {
         });
         jPanel1.add(jComboBoxPesquisaSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 150, -1));
 
-        jButtonNovo.setText("Nova Idea");
+        jButtonNovo.setText("Nova Ideia");
         jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoActionPerformed(evt);
@@ -478,11 +484,19 @@ public class formInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TabelaIdeiasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaIdeiasKeyPressed
-         if(evt.getKeyCode()== KeyEvent.VK_UP || evt.getKeyCode()==KeyEvent.VK_DOWN){
-             preencherFormulario(); 
-         }
+      
        
     }//GEN-LAST:event_TabelaIdeiasKeyPressed
+
+    private void TabelaIdeiasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaIdeiasMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TabelaIdeiasMouseEntered
+
+    private void TabelaIdeiasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaIdeiasKeyReleased
+           if(evt.getKeyCode()== KeyEvent.VK_UP || evt.getKeyCode()==KeyEvent.VK_DOWN){
+             preencherFormulario(); 
+         }
+    }//GEN-LAST:event_TabelaIdeiasKeyReleased
      private void preenceherTabela(String sql) {
          ArrayList dados = new ArrayList();
          String colunas [] = new String[]{"Cod.","Data Cadastro","Descrição","Viabilidade","Status"};
